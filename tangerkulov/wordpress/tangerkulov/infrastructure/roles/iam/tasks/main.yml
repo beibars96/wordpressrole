@@ -1,0 +1,14 @@
+---
+# tasks file for iam
+- name: Add users
+  ansible.builtin.user:
+    name: "{{ item }}"
+    state: present
+  with_items:
+  - ben
+  - johnd
+
+- name: Add group
+  ansible.builtin.group:
+    name: DevOps
+    state: present
